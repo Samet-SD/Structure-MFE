@@ -20,7 +20,14 @@ const devConfig = {
             exposes:{
                 './Structure': './src/bootstrap'
             },
-            shared: packageJson.dependencies,
+            //shared: packageJson.dependencies,
+            shared: {
+                react: {
+                    singleton: true,
+                },
+                
+            }
+            
         }),
         new HtmlWebpackPlugin(
             {

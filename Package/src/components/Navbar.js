@@ -10,6 +10,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { items } from './consts/items';
 import { styles } from "./styles/styles"
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
    
@@ -33,9 +34,11 @@ const Navbar = () => {
             <ListItemIcon sx={styles.icons}>
               {item.icon}
             </ListItemIcon>
+            <Link to = {item.route} relative="path">
             <ListItemText 
             sx={styles.text}
             primary={item.label} />
+            </Link>
           </ListItemButton>
         </ListItem>
       ))}

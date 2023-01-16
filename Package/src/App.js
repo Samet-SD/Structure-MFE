@@ -1,22 +1,32 @@
 import React from 'react'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import { Switch, Route, Router } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 
 
-const App = () => {
+const App = ({history}) => {
   return (
     <div>
     
-      <BrowserRouter>
+      <Router history={history}>
       <Switch>
-      
-      <Route exact path="/" component={Navbar} />
+      <Route path="/" component={Navbar} />
       </Switch>
-      </BrowserRouter>
+      
+      
+      </Router>
     
     </div>
   )
 }
 
 export default App
+
+/*
+      <Switch>
+      <Route path="/transactions" component={Navbar} />
+      </Switch>
+      <Switch>
+      <Route path="/payments" component={Navbar} />
+      </Switch>
+      */
